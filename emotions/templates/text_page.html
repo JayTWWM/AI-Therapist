@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+{% block content %}
+    <div class='content-section'>
+       <form method="POST" action="">
+           {{ form.hidden_tag() }}
+           <fieldset class="form-group">
+               <legend class="border-bottom mb-4">Enter Text</legend>
+               
+               <div class="form-group">
+                    {{ form.text.label(class="form-control-label") }}
+                    {% if form.text.errors %}
+                        {{ form.text(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback" >
+                            {% for error in form.text.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+                    {{ form.text(class="form-control form-control-lg") }}
+                   {% endif %}
+                </div>
+              
+            
+           </fieldset>
+           <div class="form-group">
+               {{ form.submit_text(class="btn btn-outline-info") }}
+           </div>
+         
+       </form> 
+    </div>
+    
+{% endblock content %}
