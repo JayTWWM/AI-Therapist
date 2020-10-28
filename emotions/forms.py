@@ -34,24 +34,6 @@ class LoginForm(FlaskForm):
     remember = BooleanField('Remember Me')
     submit = SubmitField('Login')
 
-class UpdateAccountForm(FlaskForm):
-    username = StringField('Username',validators=[DataRequired(),Length(min=2,max=20)])
-    email = StringField('Email',validators=[DataRequired(),Email(message='Enter valid email',granular_message=True)])
-    picture = FileField('Update your profile picture',validators=[FileAllowed(['jpg','png'])])
-    submit = SubmitField('Update')
-
-    def validate_username(self,username):
-        if username.data != current_user.username:
-            user = User.query.filter_by(username=username.data).first()
-            if user:
-                raise ValidationError('Username already exists! Try another username')
-
-    def validate_email(self,email):
-        if email.data != current_user.email:
-            user = User.query.filter_by(email=email.data).first()
-            if user:
-                raise ValidationError('Email already exists! Try another email')
-
 class SubmitText(FlaskForm):
     text = StringField('Text',validators=[DataRequired(),Length(min=2)])
     submit_text = SubmitField('Submit')
