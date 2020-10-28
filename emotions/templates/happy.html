@@ -236,7 +236,7 @@
                 <!-- <li><a href="#"><i class="fa fa-codepen"></i></a></li> -->
             </ul>
             <button class="btn draw-border" onclick="watchMovies()">Watch Now</button>
-            <button class="btn draw-border">Save For Later</button>
+            <a class="btn draw-border" href="{{url_for('home')}}">Save For Later</a>
 
         </div>
 
@@ -262,7 +262,7 @@
                 <!-- <li><a href="#"><i class="fa fa-codepen"></i></a></li> -->
             </ul>
             <button class="btn draw-border" onclick="watchVideos()">Play Now</button>
-            <button class="btn draw-border">Save For Later</button>
+            <a class="btn draw-border" href="{{url_for('home')}}">Save For Later</a>
 
         </div>
 
@@ -288,12 +288,12 @@
                 <!-- <li><a href="#"><i class="fa fa-codepen"></i></a></li> -->
             </ul>
             <button class="btn draw-border" onclick="readBooks()">Read Now</button>
-            <button class="btn draw-border">Save For Later</button>
+            <a class="btn draw-border" href="{{url_for('home')}}">Save For Later</a>
 
         </div>
 
     </div>
-    <a href="#" class="float">
+    <a href="{{url_for('home')}}" class="float">
         <i class="fa fa-home my-float" style='font-size:24px'></i>
     </a>
 
