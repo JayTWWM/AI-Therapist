@@ -3,5 +3,6 @@
     "python.linting.pylintArgs": [
         "--load-plugins",
         "pylint-flask"
-    ]
+    ],
+    "git.ignoreLimitWarning": true
 }
